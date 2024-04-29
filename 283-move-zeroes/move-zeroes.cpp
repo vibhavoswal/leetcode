@@ -2,36 +2,32 @@ class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
 
-        // int i=0,j=nums.size()-1;
-        // if(nums.size() == 1)
-        //     return;
+        int i=0;
+        // while(i<nums.size()) {
+        //     if(nums[i]==0) {
+        //         break;
+        //     }
+        // }
+        int j=0;
+        // while(j<nums.size()) {
+        //     if(nums[j]!=0) {
+        //         break;
+        //     }
+        // }
+        while(i<nums.size() and j<nums.size()) {
 
-        int first_zero = nums.size();
-        for(int i=0;i<nums.size();++i) {
-            if(nums[i] == 0) {
-                first_zero = i;
-                break;
+            swap(nums[i],nums[j]);
+            
+            while(i<nums.size() and nums[i]!=0) {
+                i++;
             }
+
+            j=i+1;
+            while(j<nums.size() and nums[j]==0) {
+                j++;
+            }            
         }
-        if(first_zero == nums.size()) {
-            return;
-        }
-        
-        cout<<"First zero is "<<first_zero<<endl;
 
-        for(int i=0;i<nums.size();++i) {
-            if(i!=first_zero and i>first_zero) {
-                swap(nums[i],nums[first_zero]);
-            }
 
-            while (first_zero<nums.size() and nums[first_zero]!=0) {
-                first_zero++;
-            }
-            if(first_zero >= nums.size()) {
-                break;
-            }
-
-            cout<<"First zero is "<<first_zero<<endl;
-        }
     }
 };
