@@ -17,7 +17,7 @@ public:
     }
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
         
-        if(!prerequisites.size()) return true;
+        // if(!prerequisites.size()) return true;
 
         vector<vector<int>> adjList(numCourses);
         vector<int> visited(numCourses, 0);
