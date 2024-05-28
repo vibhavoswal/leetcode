@@ -1,7 +1,7 @@
 class Solution {
 private:
-    map<int, int> m;
-    map<int, int> len;
+    unordered_map<int, int> m;
+    unordered_map<int, int> len;
     //len will store the len starting from num
 
 public:
